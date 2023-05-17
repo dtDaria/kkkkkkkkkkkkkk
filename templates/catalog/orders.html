@@ -1,0 +1,90 @@
+{% extends "basic.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    {% block title %} Личный кабинет {% endblock %}
+</head>
+<body>
+
+{% block content %}
+<div class="center">
+    <p class="text_center">Личный кабинет</p>
+    <p class="text_bot">здесь показываются все заявки, которые вы сделали.</p>
+    <p class="text_bot">фильтр заявок по статусу:</p>
+
+    <nav class="link_applic">
+        <a href="{% url 'orders' %}">все</a>
+        {% for item in status %}
+        <a href="{%url 'orders'%}?status={{ item.0 }}">{{ item.1 }}</a>
+        {% endfor %}
+    </nav>
+    {% if order_list %}
+    <div class="applications">
+
+        {% for order in order_list %}
+        <div class="block">
+
+            <div class="text_row">
+                <p class="text_block">Категория заявки :
+                <p class="text_bot_block">{{ order.category }}</p></p>
+            </div>
+
+            <div class="text_row">
+                <p class="text_block">Заявка :
+                <p class="text_bot_block">{{ order.name }}</p></p>
+            </div>
+
+            <div class="text_row">
+                <p class="text_block">Описание заявки :
+                <p class="text_bot_block">{{order.descriptions}}</p></p>
+            </div>
+
+            <div class="text_row">
+                <p class="text_block">дата
+                <p class="text_bot_block">{{ order.date }}</p></p>
+            </div>
+
+            <div class="text_row">
+                <p class="text_block">статус:
+                <p class="text_bot_block">({{ order.status_verbose }})</p></p>
+            </div>
+
+            <img style="height: 150px; width: 150px;" src="media/{{ order.photo_file }}">
+            {% if order.status == 'new' %}
+            <a href="{% url 'delete_order'  order.pk %}">Удалить заявку</a>
+            {% endif %}
+        </div>
+        {% endfor %}
+
+        {% else %}
+        <p class="font-weight-bold">У вас пока нет заказов</p>
+        {% endif %}
+        <a href="{% url 'order_create' %}">Добавить объявление</a>
+    </div>
+    {% endblock %}
+
+    {% block footer %}
+    <div class="footer">
+        <div class="footer_blocks">
+            <div class="links_quick">
+                <p class="text_links">Ссылки на нас</p>
+                <a href="#">о нас</a>
+            </div>
+            <div class="about">
+                <p class="text_top_about">О нас</p>
+                <p class="text_bot_about"> Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные
+                    тексты.
+                    Вдали свой дорогу он
+                    вопроса великий! Пор, имеет однажды там имени вскоре журчит силуэт осталось свое предупредила, до,
+                    великий
+                    вопрос!</p>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+</body>
+</html>
