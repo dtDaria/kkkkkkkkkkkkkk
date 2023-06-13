@@ -2,16 +2,13 @@
 
 {% block content %}
 <div class="main">
+
     <h1 style="margin-top: 100px">Регистрация</h1>
         <div class="all_reg">
             <form class="forms" method="post">
                 {{ form.as_p }}
                 {% csrf_token %}
-                <button
-                        type="submit"
-                        class="btno">
-                    Регистрация
-                </button>
+                <button type="submit" class="btno">Регистрация</button>
             </form>
         </div>
 </div>

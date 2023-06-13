@@ -1,0 +1,51 @@
+h1{
+    margin-bottom: 20px;
+    text-align:center;
+}
+.all_reg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#id_username{
+    margin-left: 150px;
+}
+
+#id_email{
+    margin-top: 20px;
+    margin-left: 14px
+}
+
+
+#id_password{
+    margin-top: 20px;
+    margin-left: 143px
+}
+
+#id_password2{
+    margin-top: 20px;
+    margin-left: 65px
+}
+
+#id_name{
+    margin-top: 20px;
+    margin-left: 163px
+}
+#id_surname{
+    margin-top: 20px;
+    margin-left: 130px
+}
+#id_patronymic{
+    margin-top: 20px;
+    margin-left: 129px
+}
+#id_rules{
+    margin-top: 20px
+}
+.btno{
+    margin-top: 20px;
+    padding: 10px;
+    margin-left: 130px
+}

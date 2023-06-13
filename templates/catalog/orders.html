@@ -12,7 +12,7 @@
 {% block content %}
 <div class="center">
     <p class="text_center">Личный кабинет</p>
-    <p class="text_bot">здесь показываются все заявки, которые вы сделали.</p>
+    <p class="text_bot">Здесь показываются все заявки, которые вы сделали.</p>
     <p class="text_bot">фильтр заявок по статусу:</p>
 
     <nav class="link_applic">
@@ -43,7 +43,7 @@
             </div>
 
             <div class="text_row">
-                <p class="text_block">дата
+                <p class="text_block">дата:
                 <p class="text_bot_block">{{ order.date }}</p></p>
             </div>
 
@@ -63,26 +63,6 @@
         <p class="font-weight-bold">У вас пока нет заказов</p>
         {% endif %}
         <a href="{% url 'order_create' %}">Добавить объявление</a>
-    </div>
-    {% endblock %}
-
-    {% block footer %}
-    <div class="footer">
-        <div class="footer_blocks">
-            <div class="links_quick">
-                <p class="text_links">Ссылки на нас</p>
-                <a href="#">о нас</a>
-            </div>
-            <div class="about">
-                <p class="text_top_about">О нас</p>
-                <p class="text_bot_about"> Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные
-                    тексты.
-                    Вдали свой дорогу он
-                    вопроса великий! Пор, имеет однажды там имени вскоре журчит силуэт осталось свое предупредила, до,
-                    великий
-                    вопрос!</p>
-            </div>
-        </div>
     </div>
     {% endblock %}
 
